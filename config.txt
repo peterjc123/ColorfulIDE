@@ -1,0 +1,10 @@
+{
+	"IsDirectory": true,
+	"BackgroundImageFileAbsolutePath": "",
+	"BackgroundImageAbsolutePath": "",
+	"Opacity":0.35,
+	"PositionHorizon":1,
+	"PositionVertical":1,
+	"Interval":60000 ,
+	"ChangeBackgroundColor": false
+}

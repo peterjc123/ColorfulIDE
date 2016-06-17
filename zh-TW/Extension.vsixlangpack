@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<VsixLanguagePack Version="1.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema-lp/2010">
+  <LocalizedName>ColorfulIDE</LocalizedName>
+  <LocalizedDescription>Colorful-IDE插件可用於更換背景圖片，圖片可以定時自動切換。</LocalizedDescription>
+  <MoreInfoUrl> http://www.contoso.com/products/es/ArbolDeFamilia.htm</MoreInfoUrl>
+</VsixLanguagePack>

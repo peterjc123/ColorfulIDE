@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<VsixLanguagePack Version="1.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema-lp/2010">
+  <LocalizedName>ColorfulIDE</LocalizedName>
+  <LocalizedDescription>Colorful-IDEはユーザーの背景画像を変更することができます visual studio アドインです。画像を一定の間隔で変更可能性があります。</LocalizedDescription>
+  <MoreInfoUrl> http://www.contoso.com/products/es/ArbolDeFamilia.htm</MoreInfoUrl>
+</VsixLanguagePack>
