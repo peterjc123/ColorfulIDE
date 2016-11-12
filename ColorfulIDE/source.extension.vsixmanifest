@@ -5,7 +5,7 @@
     <DisplayName>Colorful-IDE</DisplayName>
     <Description xml:space="preserve">Colorful-IDE is a visual studio add-in that allows user to change the background image. The images may change at a constant interval.</Description>
     <Icon>vsixicon.png</Icon>
-    <PreviewImage>QQ图片20150329202916.png</PreviewImage>
+    <PreviewImage>example.png</PreviewImage>
     <Tags>theme, Text Editor, Background, 背景</Tags>
   </Metadata>
   <Installation InstalledByMsi="false">
