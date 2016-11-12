@@ -58,6 +58,7 @@ namespace HiTeam.ColorfulIDE
         private readonly Timer _opacityTimer;
         private int _opacityIndex;
         private int _flag;
+        private double _ratio;
 
         private readonly IServiceProvider _serviceProvider;
 
@@ -65,7 +66,7 @@ namespace HiTeam.ColorfulIDE
         private string[] _imagePaths;
         private int[] _sequence;
 
-        private void  RandomSequence()
+        private void RandomSequence()
         {
             var list = new List<int>();
             var random = new Random();
@@ -155,7 +156,7 @@ namespace HiTeam.ColorfulIDE
                         {
                             _opacityTimer.Stop();
                             _flag = 1;
-                            Application.Current.Dispatcher.BeginInvoke(new Action(() => { ChangeImage(); this.OnSizeChange(); }));
+                            Application.Current.Dispatcher.BeginInvoke(new Action(() => { ChangeImage(); OnSizeChange(); }));
                             _opacityIndex = 0;
                             _opacityTimer.Start();
                         }
@@ -163,7 +164,7 @@ namespace HiTeam.ColorfulIDE
                         {
                             _opacityTimer.Stop();
                             _flag = 0;
-                            Application.Current.Dispatcher.BeginInvoke(new Action(this.OnSizeChange));
+                            Application.Current.Dispatcher.BeginInvoke(new Action(OnSizeChange));
                             _opacityIndex = 10;
                         }
                     }
@@ -173,8 +174,8 @@ namespace HiTeam.ColorfulIDE
                     }
                 };
 
-                _view.ViewportHeightChanged += delegate { this.OnSizeChange(); };
-                _view.ViewportWidthChanged += delegate { this.OnSizeChange(); };
+                _view.ViewportHeightChanged += delegate { OnSizeChange(); };
+                _view.ViewportWidthChanged += delegate { OnSizeChange(); };
             }
             catch (Exception)
             {
@@ -229,6 +230,7 @@ namespace HiTeam.ColorfulIDE
 
             _image.Width = _bitmap.PixelWidth;
             _image.Height = _bitmap.PixelHeight;
+
             _image.IsHitTestVisible = false;
 
             _current = (_current + 1) % _imagePaths.Length;
@@ -241,7 +243,7 @@ namespace HiTeam.ColorfulIDE
                 var config = new Setting();
 
                 var dte2 = (DTE2)_serviceProvider.GetService(typeof(DTE));
-                
+
                 var props = dte2.Properties["Colorful-IDE", "General"];
 
                 config.IsDirectory = props.Item("IsDirectory").Value;
@@ -267,16 +269,18 @@ namespace HiTeam.ColorfulIDE
             {
                 _adornmentLayer.RemoveAllAdornments();
 
+                ResizeImage();
+
                 switch (_config.PositionHorizon)
                 {
                     case PositionH.Left:
                         Canvas.SetLeft(_image, _view.ViewportLeft);
                         break;
                     case PositionH.Right:
-                        Canvas.SetLeft(_image, _view.ViewportRight - _bitmap.PixelWidth);
+                        Canvas.SetLeft(_image, _view.ViewportRight - _bitmap.PixelWidth * _ratio);
                         break;
                     case PositionH.Center:
-                        Canvas.SetLeft(_image, _view.ViewportRight - _view.ViewportWidth + ((_view.ViewportWidth / 2) - ((double)_bitmap.PixelWidth / 2)));
+                        Canvas.SetLeft(_image, _view.ViewportRight - _view.ViewportWidth + (_view.ViewportWidth / 2 - _bitmap.PixelWidth * _ratio / 2));
                         break;
                     default:
                         throw new ArgumentOutOfRangeException();
@@ -287,10 +291,10 @@ namespace HiTeam.ColorfulIDE
                         Canvas.SetTop(_image, _view.ViewportTop);
                         break;
                     case PositionV.Bottom:
-                        Canvas.SetTop(_image, _view.ViewportBottom - _bitmap.PixelHeight);
+                        Canvas.SetTop(_image, _view.ViewportBottom - _bitmap.PixelHeight * _ratio);
                         break;
                     case PositionV.Center:
-                        Canvas.SetTop(_image, _view.ViewportBottom - _view.ViewportHeight + ((_view.ViewportHeight / 2) - ((double)_bitmap.PixelHeight / 2)));
+                        Canvas.SetTop(_image, _view.ViewportBottom - _view.ViewportHeight + (_view.ViewportHeight / 2 - _bitmap.PixelHeight * _ratio / 2.0));
                         break;
                     default:
                         throw new ArgumentOutOfRangeException();
@@ -301,6 +305,24 @@ namespace HiTeam.ColorfulIDE
             {
                 // ignored
             }
+        }
+
+        private void ResizeImage()
+        {
+            _ratio = 1.0;
+
+            if (_bitmap.PixelWidth > _view.ViewportWidth)
+            {
+                _ratio = _view.ViewportWidth / _bitmap.PixelWidth;
+            }
+
+            if (_bitmap.PixelHeight > _view.ViewportHeight)
+            {
+                _ratio = _view.ViewportHeight / _bitmap.PixelHeight < _ratio ? _view.ViewportHeight / _bitmap.PixelHeight : _ratio;
+            }
+
+            _image.Height = _bitmap.PixelHeight * _ratio;
+            _image.Width = _bitmap.PixelWidth * _ratio;
         }
     }
 }

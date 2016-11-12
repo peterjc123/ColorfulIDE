@@ -1,6 +1,7 @@
 ﻿using System.Diagnostics;
 using System.Globalization;
 using System.Runtime.InteropServices;
+using HiTeam.ColorfulIDE.Options;
 using Microsoft.VisualStudio.Shell;
 
 namespace HiTeam.ColorfulIDE
@@ -22,8 +23,8 @@ namespace HiTeam.ColorfulIDE
     // This attribute is used to register the information needed to show this package
     // in the Help/About dialog of Visual Studio.
     [InstalledProductRegistration("#110", "#112", "1.0", IconResourceID = 400)]
-    [ProvideOptionPage(typeof(Options.ColorfulIdeOptionPageGrid), "Colorful-IDE", "General", 110, 214, true)]
-    [Guid(GuidList.guidColorfulIDEPkgString)]
+    [ProvideOptionPage(typeof(ColorfulIdeOptionPageGrid), "Colorful-IDE", "General", 110, 214, true)]
+    [Guid(GuidList.GuidColorfulIdePkgString)]
     public sealed class ColorfulIdePackage : Package
     {
         /// <summary>
@@ -35,7 +36,7 @@ namespace HiTeam.ColorfulIDE
         /// </summary>
         public ColorfulIdePackage()
         {
-            Debug.WriteLine(string.Format(CultureInfo.CurrentCulture, "Entering constructor for: {0}", this.ToString()));
+            Debug.WriteLine(string.Format(CultureInfo.CurrentCulture, "Entering constructor for: {0}", ToString()));
         }
 
 
@@ -50,7 +51,7 @@ namespace HiTeam.ColorfulIDE
         /// </summary>
         protected override void Initialize()
         {
-            Debug.WriteLine(string.Format(CultureInfo.CurrentCulture, "Entering Initialize() of: {0}", this.ToString()));
+            Debug.WriteLine(string.Format(CultureInfo.CurrentCulture, "Entering Initialize() of: {0}", ToString()));
             base.Initialize();
 
         }

@@ -35,7 +35,10 @@ namespace HiTeam.ColorfulIDE
 		/// Instantiates a MyIDE manager when a textView is created.
 		/// </summary>
 		/// <param name="textView">The <see cref="IWpfTextView"/> upon which the adornment should be placed</param>
-		public void TextViewCreated(IWpfTextView textView) => new ColorfulIde(textView, ServiceProvider);
+		public void TextViewCreated(IWpfTextView textView)
+		{
+		    new ColorfulIde(textView, ServiceProvider);
+		}
 	}
 	
 	#endregion //Adornment Factory
