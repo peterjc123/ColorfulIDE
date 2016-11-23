@@ -79,6 +79,16 @@ namespace HiTeam.ColorfulIDE.Options
         [LocalizedDisplayName("S240")]
         [LocalizedDescription("S242")]
         public bool ChangeBackgroundColor { get; set; }
+
+        [Category("Layout")]
+        [LocalizedDisplayName("S244")]
+        [LocalizedDescription("S246")]
+        public bool AutoResize { get; set; }
+
+        [Category("Layout")]
+        [LocalizedDisplayName("S248")]
+        [LocalizedDescription("S250")]
+        public bool RandomSequence { get; set; }
     }
 
     public class PositionHTypeConverter : EnumConverter

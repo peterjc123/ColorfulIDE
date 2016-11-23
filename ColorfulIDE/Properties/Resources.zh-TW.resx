@@ -177,4 +177,16 @@
   <data name="S242" xml:space="preserve">
     <value>編輯器的背景色是否隨著背景圖片的改變而改變</value>
   </data>
+  <data name="S244" xml:space="preserve">
+    <value>自動縮放</value>
+  </data>
+  <data name="S246" xml:space="preserve">
+    <value>當圖片大小大於編輯器表單大小時，是否會進行自動縮放</value>
+  </data>
+  <data name="S248" xml:space="preserve">
+    <value>隨機順序</value>
+  </data>
+  <data name="S250" xml:space="preserve">
+    <value>圖片播放的順序為隨機還是順序</value>
+  </data>
 </root>

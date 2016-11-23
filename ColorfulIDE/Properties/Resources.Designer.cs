@@ -240,5 +240,41 @@ namespace HiTeam.ColorfulIDE.Properties {
                 return ResourceManager.GetString("S242", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   查找类似 AutoResize 的本地化字符串。
+        /// </summary>
+        public static string S244 {
+            get {
+                return ResourceManager.GetString("S244", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Judging that whether the background will be auto-resized if the size of  the picture is larger than the editor window.  的本地化字符串。
+        /// </summary>
+        public static string S246 {
+            get {
+                return ResourceManager.GetString("S246", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 RandomSequence 的本地化字符串。
+        /// </summary>
+        public static string S248 {
+            get {
+                return ResourceManager.GetString("S248", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Judging that whether the background images will be shown following a pattern or randomly. 的本地化字符串。
+        /// </summary>
+        public static string S250 {
+            get {
+                return ResourceManager.GetString("S250", resourceCulture);
+            }
+        }
     }
 }

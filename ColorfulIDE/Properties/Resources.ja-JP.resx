@@ -177,4 +177,16 @@
   <data name="S242" xml:space="preserve">
     <value>かどうかは、エディターの背景色変更画像のことを判断します。</value>
   </data>
+  <data name="S244" xml:space="preserve">
+    <value>自動ズーム</value>
+  </data>
+  <data name="S246" xml:space="preserve">
+    <value>画像の大きさによりエディターフォーム大時間、かどうかを自動的にズーム。</value>
+  </data>
+  <data name="S248" xml:space="preserve">
+    <value>ランダム順序</value>
+  </data>
+  <data name="S250" xml:space="preserve">
+    <value>画像の順でランダム順序は放送</value>
+  </data>
 </root>

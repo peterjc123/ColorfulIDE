@@ -177,4 +177,16 @@
   <data name="S242" xml:space="preserve">
     <value>Judging that whether the background color of the editor changes with the picture's.</value>
   </data>
+  <data name="S244" xml:space="preserve">
+    <value>AutoResize</value>
+  </data>
+  <data name="S246" xml:space="preserve">
+    <value>Judging that whether the background will be auto-resized if the size of  the picture is larger than the editor window. </value>
+  </data>
+  <data name="S248" xml:space="preserve">
+    <value>RandomSequence</value>
+  </data>
+  <data name="S250" xml:space="preserve">
+    <value>Judging that whether the background images will be shown following a pattern or randomly.</value>
+  </data>
 </root>

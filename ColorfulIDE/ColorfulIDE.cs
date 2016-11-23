@@ -255,6 +255,8 @@ namespace HiTeam.ColorfulIDE
                 config.Interval = props.Item("Interval").Value;
                 config.OpacityInterval = props.Item("OpacityInterval").Value;
                 config.ChangeBackgroundColor = props.Item("ChangeBackgroundColor").Value;
+                config.AutoResize = props.Item("AutoResize").Value;
+                config.RandomSequence = props.Item("RandomSequence").Value;
                 return config;
             }
             catch (Exception)
@@ -310,6 +312,11 @@ namespace HiTeam.ColorfulIDE
         private void ResizeImage()
         {
             _ratio = 1.0;
+
+            if (!_config.AutoResize)
+            {
+                return;
+            }
 
             if (_bitmap.PixelWidth > _view.ViewportWidth)
             {

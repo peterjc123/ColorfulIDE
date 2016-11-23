@@ -177,4 +177,16 @@
   <data name="S242" xml:space="preserve">
     <value>编辑器的背景色是否随着背景图片的改变而改变</value>
   </data>
+  <data name="S244" xml:space="preserve">
+    <value>自动缩放</value>
+  </data>
+  <data name="S246" xml:space="preserve">
+    <value>当图片大小大于编辑器窗体大小时，是否会进行自动缩放</value>
+  </data>
+  <data name="S248" xml:space="preserve">
+    <value>随机顺序</value>
+  </data>
+  <data name="S250" xml:space="preserve">
+    <value>图片播放的顺序为随机还是顺序</value>
+  </data>
 </root>

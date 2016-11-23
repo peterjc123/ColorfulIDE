@@ -21,6 +21,8 @@ namespace HiTeam.ColorfulIDE.Settings
             Interval = 60000;
             OpacityInterval = 200;
             ChangeBackgroundColor = false;
+            AutoResize = true;
+            RandomSequence = true;
         }
 
         public bool IsDirectory { get; set; }
@@ -32,6 +34,8 @@ namespace HiTeam.ColorfulIDE.Settings
         public double Interval { get; set; }
         public double OpacityInterval { get; set; }
         public bool ChangeBackgroundColor { get; set; }
+        public bool AutoResize { get; set; }
+        public bool RandomSequence { get; set; }
 
         public void Serialize()
         {

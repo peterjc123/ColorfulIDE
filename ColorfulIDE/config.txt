@@ -6,5 +6,7 @@
 	"PositionHorizon":1,
 	"PositionVertical":1,
 	"Interval":60000 ,
-	"ChangeBackgroundColor": false
+	"ChangeBackgroundColor": false,
+	"AutoResize": true,
+	"RandomSequence": true
 }
