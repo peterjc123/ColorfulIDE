@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
     <Metadata>
-        <Identity Id="af26cdc1-8385-4daa-a8de-68a7f339ed14" Version="3.2" Language="en-US" Publisher="Hi Team" />
+        <Identity Id="af26cdc1-8385-4daa-a8de-68a7f339ed14" Version="3.4" Language="en-US" Publisher="Hi Team" />
         <DisplayName>Colorful-IDE</DisplayName>
         <Description xml:space="preserve">Colorful-IDE is a visual studio add-in that allows user to change the background image. The images may change at a constant interval.</Description>
         <Icon>vsixicon.png</Icon>
