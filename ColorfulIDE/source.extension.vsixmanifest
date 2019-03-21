@@ -1,24 +1,27 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
-  <Metadata>
-    <Identity Id="af26cdc1-8385-4daa-a8de-68a7f339ed14" Version="3.1" Language="en-US" Publisher="Hi Team" />
-    <DisplayName>Colorful-IDE</DisplayName>
-    <Description xml:space="preserve">Colorful-IDE is a visual studio add-in that allows user to change the background image. The images may change at a constant interval.</Description>
-    <Icon>vsixicon.png</Icon>
-    <PreviewImage>example.png</PreviewImage>
-    <Tags>theme, Text Editor, Background, 背景</Tags>
-  </Metadata>
-  <Installation InstalledByMsi="false">
-    <InstallationTarget Id="Microsoft.VisualStudio.Pro" Version="[12.0.15.0)" />
-    <InstallationTarget Version="[12.0,15.0)" Id="Microsoft.VisualStudio.Community" />
-    <InstallationTarget Version="[12.0,15.0)" Id="Microsoft.VisualStudio.Enterprise" />
-  </Installation>
-  <Dependencies>
-    <Dependency Id="Microsoft.Framework.NDP" DisplayName="Microsoft .NET Framework" d:Source="Manual" Version="[4.5,)" />
-    <Dependency d:Source="Installed" Id="Microsoft.VisualStudio.MPF" DisplayName="Visual Studio MPF" Version="[11.0,16.0)" />
-  </Dependencies>
-  <Assets>
-    <Asset Type="Microsoft.VisualStudio.VsPackage" d:Source="Project" d:ProjectName="%CurrentProject%" Path="|%CurrentProject%;PkgdefProjectOutputGroup|" />
-    <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="%CurrentProject%" Path="|%CurrentProject%|" />
-  </Assets>
+    <Metadata>
+        <Identity Id="af26cdc1-8385-4daa-a8de-68a7f339ed14" Version="3.4" Language="en-US" Publisher="Hi Team" />
+        <DisplayName>Colorful-IDE</DisplayName>
+        <Description xml:space="preserve">Colorful-IDE is a visual studio add-in that allows user to change the background image. The images may change at a constant interval.</Description>
+        <Icon>vsixicon.png</Icon>
+        <PreviewImage>example.png</PreviewImage>
+        <Tags>theme, Text Editor, Background, 背景</Tags>
+    </Metadata>
+    <Installation InstalledByMsi="false">
+        <InstallationTarget Id="Microsoft.VisualStudio.Pro" Version="[12.0,17.0)" />
+        <InstallationTarget Version="[12.0,17.0)" Id="Microsoft.VisualStudio.Community" />
+        <InstallationTarget Version="[12.0,17.0)" Id="Microsoft.VisualStudio.Enterprise" />
+    </Installation>
+    <Dependencies>
+        <Dependency Id="Microsoft.Framework.NDP" DisplayName="Microsoft .NET Framework" d:Source="Manual" Version="[4.5,)" />
+        <Dependency d:Source="Installed" Id="Microsoft.VisualStudio.MPF" DisplayName="Visual Studio MPF" Version="[11.0,17.0)" />
+    </Dependencies>
+    <Assets>
+        <Asset Type="Microsoft.VisualStudio.VsPackage" d:Source="Project" d:ProjectName="%CurrentProject%" Path="|%CurrentProject%;PkgdefProjectOutputGroup|" />
+        <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="%CurrentProject%" Path="|%CurrentProject%|" />
+    </Assets>
+    <Prerequisites>
+        <Prerequisite Id="Microsoft.Net.Component.4.TargetingPack" Version="[12.0,17.0)" DisplayName=".NET Framework 4 目标包" />
+    </Prerequisites>
 </PackageManifest>
